@@ -1,12 +1,12 @@
 import json
 
 class PredatoryInfo():
-     self.predatory_path = ""
+     predatory_path = "../is_predatory/is_predatory/spiders/predatory_journals.json"
      def __init__(self):
-         self._load(predatory_path)
-     def _load(self):
-         with open(self.predatory_path) as handle:
-             self._data = json.load(handle)
+         self._load(self.predatory_path)
+     def _load(self, path):
+         with open(path) as handle:
+             self._data = json.load(handle)[0]
      def update(self):
          pass
      def search(self, name):
@@ -14,8 +14,9 @@ class PredatoryInfo():
              return query_domain == db_domain
          def matches_name(query_name, db_name):
              return query_name == db_name
-         for listing in self._data:
-             if matches_domain(name, listing["domain"]):
+         for listing_id in self._data:
+             listing = self._data[listing_id]
+             if matches_domain(name, listing["url"]):
                  return listing
              if matches_name(name, listing["name"]):
                  return listing
