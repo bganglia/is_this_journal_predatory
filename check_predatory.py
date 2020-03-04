@@ -21,6 +21,8 @@ class PredatoryInfo():
              if matches_name(name, listing["name"]):
                  return listing
          return {}
+     def warn_predatory(self, result):
+         return "The journal {0} at {1} is listed as a predatory journal in Beall's List.".format(result["name"], result["url"]
      def is_predatory(self, name):
          result = self.search(name)
          if result:
