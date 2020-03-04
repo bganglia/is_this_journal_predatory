@@ -9,5 +9,11 @@ class PredatoryInfo():
              self._data = json.load(handle)
      def update(self):
          pass
-     def is_predatory(self, name):
+     def search(self):
          pass
+     def is_predatory(self, name):
+         result = self.search(name)
+         if result:
+             return self.warn_predatory(result)
+         else:
+             return self.probably_not_predatory(result)
