@@ -10,10 +10,10 @@ class PredatoryInfo():
      def update(self):
          pass
      def search(self, name):
-         def matches_domain(query_domain, db_domain):
-             return query_domain == db_domain
+         def matches_domain(query_domain, db_domains):
+             return query_domain in db_domains
          def matches_name(query_name, db_name):
-             return query_name == db_name
+             return query_name in db_names
          for listing_id in self._data:
              listing = self._data[listing_id]
              if matches_domain(name, listing["url"]):
