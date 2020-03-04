@@ -22,9 +22,9 @@ class PredatoryInfo():
                  return listing
          return {}
      def warn_predatory(self, result):
-         return "The journal {0} at {1} is listed as a predatory journal in Beall's List.".format(result["name"], result["url"]
+         return "The journal {0} at {1} is listed as a predatory journal in Beall's List.".format(result["name"], result["url"])
      def probably_not_predatory(self, name):
-         return "{0} is not listed as a predatory journal. To judge for yourself, read more at https://thinkchecksubmit.org/".format(name
+         return "{0} is not listed as a predatory journal. To judge for yourself, read more at https://thinkchecksubmit.org/".format(name)
      def is_predatory(self, name):
          result = self.search(name)
          if result:
