@@ -1,7 +1,7 @@
 import json
 
 class PredatoryInfo():
-     predatory_path = "../is_predatory/is_predatory/spiders/predatory_journals.json"
+     predatory_path = "predatory_journals.json"
      def __init__(self):
          self._load(self.predatory_path)
      def _load(self, path):
