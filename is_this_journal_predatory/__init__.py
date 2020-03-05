@@ -1,7 +1,9 @@
 import json
+import os
+import sys
 
 class PredatoryInfo():
-     predatory_path = "predatory_journals.json"
+     predatory_path = os.path.join(os.path.dirname(__file__), "predatory_journals.json")
      def __init__(self):
          self._load(self.predatory_path)
      def _load(self, path):
