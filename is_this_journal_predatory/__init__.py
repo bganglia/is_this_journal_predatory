@@ -7,8 +7,6 @@ class PredatoryInfo():
      def _load(self, path):
          with open(path) as handle:
              self._data = json.load(handle)[0]
-     def update(self):
-         pass
      def search(self, name):
          def matches_domain(query_domain, db_domains):
              return query_domain in db_domains
