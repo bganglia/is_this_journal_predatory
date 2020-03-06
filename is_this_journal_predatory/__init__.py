@@ -2,6 +2,9 @@ import json
 import os
 import sys
 
+def get_domain(url):
+     pass
+
 class PredatoryInfo():
      predatory_path = os.path.join(os.path.dirname(__file__), "predatory_journals.json")
      def __init__(self):
