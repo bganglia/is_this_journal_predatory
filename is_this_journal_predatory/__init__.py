@@ -3,7 +3,12 @@ import os
 import sys
 
 def get_domain(url):
-     pass
+     website=""
+     j=8
+     while(url[j]!='/' and j<len(url)):
+         website=website+url[j]
+         j=j+1
+     return website
 
 class PredatoryInfo():
      predatory_path = os.path.join(os.path.dirname(__file__), "predatory_journals.json")
