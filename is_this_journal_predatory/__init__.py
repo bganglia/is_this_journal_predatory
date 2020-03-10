@@ -24,9 +24,10 @@ class PredatoryInfo():
          def matches_domain(query_domain, db_domains):
              return get_domain(query_domain) in list(get_domain(db_domain) for db_domain in db_domains)
          def matches_name(query_name, db_names):
-	     for db_name in db_names:
-	         db_name = db_name.lower()
-             return query_name in db_names
+            db_names_copy = []
+            for i in range(len(db_names)):
+                db_names_copy.append(db_names[i].lower())
+            return query_name in db_names_copy
          for listing_id in self._data:
              listing = self._data[listing_id]
              if matches_domain(name, listing["url"]):
