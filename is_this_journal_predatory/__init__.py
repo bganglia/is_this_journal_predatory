@@ -45,3 +45,17 @@ class PredatoryInfo():
              return self.warn_predatory(result)
          else:
              return self.probably_not_predatory(name)
+
+# auto initialize a class
+# purpose: to call functions with shorter notation
+AutoClass = PredatoryInfo()
+
+def is_predatory(name):
+     result = AutoClass.is_predatory(name)
+     return result
+ 
+    
+    
+         
+            
+            
