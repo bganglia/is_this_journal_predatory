@@ -3,6 +3,7 @@ import os
 import sys
 
 def get_domain(url):
+     """This function takes the url and gets rid of the https... and returns the website address ie https://www.google.com/ goes to google.com"""
      website=""
      url=url.replace("http://","")
      url=url.replace("https://","")
