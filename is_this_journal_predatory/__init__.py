@@ -23,6 +23,15 @@ class PredatoryInfo():
              self._data = json.load(handle)[0]
      def search(self, name):
          def matches_domain(query_domain, db_domains):
+             """This function searches whether the query string is in the database domain or not
+                 ----
+                 query_domain: str
+                     query string that is being checked
+                 db_domains: list[str]
+                     list of url/names in the database
+                 Return: bool
+                 ----
+             """
              return get_domain(query_domain) in list(get_domain(db_domain) for db_domain in db_domains)
          def matches_name(query_name, db_names):
             db_names_copy = []
