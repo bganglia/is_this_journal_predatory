@@ -2,7 +2,7 @@
 Check whether a journal is predatory from within Python.
 
 
-# example:
+# usage example:
 import is_this_journal_predatory 
 
 
