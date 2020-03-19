@@ -34,6 +34,15 @@ class PredatoryInfo():
              """
              return get_domain(query_domain) in list(get_domain(db_domain) for db_domain in db_domains)
          def matches_name(query_name, db_names):
+            """This function searches whether the queried name is in the names from the database or not
+                ----
+                query_name: str
+                    query name that is being checked
+                db_names: list[str]
+                    list of names in the database
+                Return: bool
+                ----
+            """
             db_names_copy = []
             for i in range(len(db_names)):
                 db_names_copy.append(db_names[i].lower())
