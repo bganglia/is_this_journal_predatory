@@ -3,7 +3,7 @@ Check whether a journal is predatory from within Python.
 
 
 # usage example:
-```
+```python
 import is_this_journal_predatory 
 
 journalURL = "http://www.academeresearchjournals.org/"
