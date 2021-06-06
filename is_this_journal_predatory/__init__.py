@@ -3,6 +3,7 @@ import os
 import sys
 
 def get_domain(url):
+     """This function takes the url and gets rid of the https... and returns the website address ie https://www.google.com/ goes to google.com"""
      website=""
      url=url.replace("http://","")
      url=url.replace("https://","")
@@ -22,8 +23,26 @@ class PredatoryInfo():
              self._data = json.load(handle)[0]
      def search(self, name):
          def matches_domain(query_domain, db_domains):
+             """This function searches whether the query string is in the database domain or not
+                 ----
+                 query_domain: str
+                     query string that is being checked
+                 db_domains: list[str]
+                     list of url/names in the database
+                 Return: bool
+                 ----
+             """
              return get_domain(query_domain) in list(get_domain(db_domain) for db_domain in db_domains)
          def matches_name(query_name, db_names):
+            """This function searches whether the queried name is in the names from the database or not
+                ----
+                query_name: str
+                    query name that is being checked
+                db_names: list[str]
+                    list of names in the database
+                Return: bool
+                ----
+            """
             db_names_copy = []
             for i in range(len(db_names)):
                 db_names_copy.append(db_names[i].lower())
@@ -45,3 +64,17 @@ class PredatoryInfo():
              return self.warn_predatory(result)
          else:
              return self.probably_not_predatory(name)
+
+# auto initialize a class
+# purpose: to call functions with shorter notation
+AutoClass = PredatoryInfo()
+
+def is_predatory(name):
+     result = AutoClass.is_predatory(name)
+     return result
+ 
+    
+    
+         
+            
+            
